@@ -1,9 +1,15 @@
 {
   "name": "@jslib/emitter",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "exports": "./src/mod.ts",
   "tasks": {
-    "dev": "deno test --watch"
+    "dev": "deno test --watch",
+    "test": "deno test",
+    "lint": "deno lint --fix",
+    "release": {
+      "command": "deno publish --allow-dirty",
+      "dependencies": ["test", "lint"]
+    }
   },
   "license": "MIT",
   "imports": {
