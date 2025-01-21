@@ -1,7 +1,7 @@
 {
   "name": "@jslib/emitter",
   "version": "0.1.0",
-  "exports": "./mod.ts",
+  "exports": "./src/mod.ts",
   "tasks": {
     "dev": "deno test --watch"
   },
