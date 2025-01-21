@@ -11,9 +11,6 @@
     "@std/async": "jsr:@std/async@1",
     "@/": "./src/"
   },
-  "publish": {
-    "include": ["src", "CHANGELOG.md", "README.md", "LICENSE"]
-  },
   "fmt": {
     "lineWidth": 100,
     "semiColons": false,
