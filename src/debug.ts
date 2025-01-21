@@ -87,7 +87,7 @@ export interface DebugImplOptions {
  * ```
  */
 export class DebugImpl implements Debug {
-  constructor(private _options: DebugImplOptions) {
+  constructor(private _options: DebugImplOptions = {}) {
     const { enabled = true } = _options
     this.enabled = enabled
   }
