@@ -1,3 +1,4 @@
+import { isMetaEvent } from '@/meta_events.ts'
 import type { EventName } from '@/mod.ts'
 
 /**
@@ -107,13 +108,13 @@ export class DebugImpl implements Debug {
     const logTime = `${t.getHours()}:${t.getMinutes()}:${t.getSeconds()}.${t.getMilliseconds()}`
 
     const groupName = `[${logTime}][emitter:${type}]: ${String(eventName)}`
-    console.group(groupName)
+    console[isMetaEvent(eventName) ? 'groupCollapsed' : 'group'](groupName)
     eventArgs?.forEach((arg, i) => {
       try {
         console.log(`Arg[${i}]:`, structuredClone(arg))
       } catch (e: unknown) {
         console.error(
-          `%cArg[5]: ${(e as DOMException).message}`,
+          `%cArg[${i}]: ${(e as DOMException).message}`,
           'padding-bottom: 0.5em',
           '\n\t',
           'Original Reference:',
