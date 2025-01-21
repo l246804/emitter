@@ -1,0 +1,29 @@
+{
+  "name": "@jslib/emitter",
+  "version": "0.1.0",
+  "exports": "./mod.ts",
+  "tasks": {
+    "dev": "deno test --watch"
+  },
+  "license": "MIT",
+  "imports": {
+    "@std/assert": "jsr:@std/assert@1",
+    "@std/async": "jsr:@std/async@1",
+    "@/": "./src/"
+  },
+  "publish": {
+    "include": ["src", "CHANGELOG.md", "README.md", "LICENSE"]
+  },
+  "fmt": {
+    "lineWidth": 100,
+    "semiColons": false,
+    "singleQuote": true
+  },
+  "test": {
+    "include": ["./tests/**/*.ts"]
+  },
+  "compilerOptions": {
+    "lib": ["deno.ns", "dom", "dom.iterable"]
+  },
+  "nodeModulesDir": "auto"
+}

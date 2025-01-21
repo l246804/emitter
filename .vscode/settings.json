@@ -1,0 +1,11 @@
+{
+  "editor.defaultFormatter": "denoland.vscode-deno",
+  "editor.formatOnSave": true,
+  "cSpell.words": [
+    "jslib"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always",
+    "source.organizeImports": "explicit"
+  }
+}
