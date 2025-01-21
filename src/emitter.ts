@@ -435,15 +435,11 @@ export class Emitter<EventMap = Record<EventName, any[]>, AllEventMap = EventMap
     const anyListeners = (anyListenersMap.get(this) || []).slice()
 
     for (const listener of listeners) {
-      if (listeners.includes(listener)) {
-        await listener.apply(this, eventArgs)
-      }
+      await listener.apply(this, eventArgs)
     }
 
     for (const listener of anyListeners) {
-      if (anyListeners.includes(listener)) {
-        await listener.apply(this, [eventName, ...eventArgs])
-      }
+      await listener.apply(this, [eventName, ...eventArgs])
     }
   }
 
